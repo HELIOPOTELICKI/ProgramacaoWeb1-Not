@@ -83,3 +83,9 @@ main {
     display: block;
     position: absolute;
 }
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
