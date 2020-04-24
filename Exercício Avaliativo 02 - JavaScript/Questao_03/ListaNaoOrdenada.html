@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleListaNaoOrdenada.css">
+        <script>
+            function makeUL(array) {
+                var x = document.createElement("UL");
+                x.setAttribute("id", "myUL");
+                document.body.appendChild(x);
+                
+                for (i = 0; i < array.length; i ++){
+                    var y = document.createElement("LI");
+                    var t = document.createTextNode(array[i]);
+                    y.appendChild(t);
+                    document.getElementById("myUL").appendChild(y);
+                    }
+                }
+        </script>
+</head>
+
+<body>
+    <header>
+        <script>
+            var frutas = ['Abacate', 'Araçá', 'Carambola', 'Groselha', 'Maçã', 'Zimbro']
+            document.write('Array de Frutas: [' + frutas + ']')
+        </script>
+    </header>
+
+    <h1><strong>Array em lista não ordenada:</strong></h1>
+
+    <script>
+        makeUL(frutas);
+    </script>
+
+</body>
+</html>
