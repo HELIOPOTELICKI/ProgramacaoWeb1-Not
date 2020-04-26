@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleLocadora.css">
+</head>
+<body>
+    <script>
+        var filme01 = new Object();
+            filme01.logo = "https://uploaddeimagens.com.br/images/002/613/165/original/Filme01.png?1587862429";
+            filme01.titulo = "O REI";
+            filme01.ano = "2019";
+            filme01.genero = "Drama militar";
+
+        var filme02 = new Object();
+            filme02.logo = "https://uploaddeimagens.com.br/images/002/613/167/original/Filme02.png?1587862449";
+            filme02.titulo = "O POÇO";
+            filme02.ano = "2019";
+            filme02.genero = "Suspense";
+
+        var filme03 = new Object();
+            filme03.logo = "https://uploaddeimagens.com.br/images/002/613/168/original/Filme03.png?1587862467";
+            filme03.titulo = "O IRLANÊS";
+            filme03.ano = "2019";
+            filme03.genero = "Drama policial";
+
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("image01").src = filme01.logo;
+            }
+        );
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("image02").src = filme02.logo;
+            }
+        );
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("image03").src = filme03.logo;
+            }
+        );
+    </script>
+
+    <div id='filme'> 
+        <img  id="image01"><br><br>
+        <script>
+            document.write(filme01.titulo+', ') 
+            document.write(filme01.ano+' - ') 
+            document.write(filme01.genero+'.') 
+        </script>
+    </div>
+
+    <div id='filme'> 
+        <img  id="image02"><br><br>
+        <script>
+            document.write(filme02.titulo+', ') 
+            document.write(filme02.ano+' - ') 
+            document.write(filme02.genero+'.') 
+        </script>
+    </div>
+
+    <div id='filme'> 
+        <img  id="image03"><br><br>
+        <script>
+            document.write(filme03.titulo+', ') 
+            document.write(filme03.ano+' - ') 
+            document.write(filme03.genero+'.') 
+        </script>
+    </div>
+</body>
+</html>
