@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleFormulario.css">
+</head>
+<body>
+    <script>
+        function getInputValue(){
+            var inputVal = document.getElementById("inputNumber").value;
+            window.alert(fatorial(inputVal));
+        }
+
+        function fatorial(valor) {
+            if(valor<0) {
+              return 'Valor deve ser maior ou igual a zero';
+            }else if ( (valor == 0) || (valor == 1) ) {
+              return 1;
+            }else {
+              var acumula = 1;
+              for(x=valor;x>1;x--) {
+                acumula = acumula * x;
+              }
+              return acumula;
+            } 
+        }
+        </script>
+
+    <form action="" method="post">
+        <div>
+            <input type="number" placeholder="Digite um número" id="inputNumber">
+        </div>
+
+        <div class="button">
+            <button type="button" onclick="getInputValue();">Calcule o Fatorial</button>
+        </div>
+    </form>
+</body>
+</html>
