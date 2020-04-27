@@ -16,7 +16,7 @@ form {
     width: auto;
     padding: 2em;
     border: 10px solid rgb(255, 0, 0);
-    border-radius: 12em;
+    border-radius: 4em;
 }
 
 form div + div {
@@ -53,4 +53,9 @@ textarea {
 
 button {
     margin-left: auto;
+}
+
+div.result {
+    background-color: #ffffff70;
+    text-align: center;
 }

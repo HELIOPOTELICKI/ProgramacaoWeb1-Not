@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styleFormulario.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $('#result').append("<br>");
+      });
+    });
+    </script>
 </head>
 <body>
     <script>
         function getInputValue(){
             var inputVal = document.getElementById("inputNumber").value;
-            window.alert(fatorial(inputVal));
+            return (`O fatorial de ${inputVal} é: ${fatorial(inputVal)}`);
         }
 
         function fatorial(valor) {
@@ -32,10 +40,11 @@
         <div>
             <input type="number" placeholder="Digite um número" id="inputNumber">
         </div>
-
         <div class="button">
-            <button type="button" onclick="getInputValue();">Calcule o Fatorial</button>
+            <button type="button" onclick='result.append(getInputValue());'>Calcule o Fatorial</button>
         </div>
+        <div class="result" id="result"></div>
     </form>
+
 </body>
 </html>
