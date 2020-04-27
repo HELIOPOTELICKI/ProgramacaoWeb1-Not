@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleFormularioSoma.css">
+</head>
+<body>
+    <script>
+        function getInputsValues(){
+            var inputVal1 = parseFloat(document.getElementById("inputNumber01").value);
+            var inputVal2 = parseFloat(document.getElementById("inputNumber02").value);
+            var inputVal3 = parseFloat(document.getElementById("inputNumber03").value);
+            var soma, posNeg;;
+
+            if (isNaN(inputVal1)){
+                inputVal1 = 0;
+            }
+            if (isNaN(inputVal2)){
+                inputVal2 = 0;
+            }
+            if (isNaN(inputVal3)){
+                inputVal3 = 0;
+            }
+            
+            soma = (inputVal1 + inputVal2 + inputVal3);
+
+            if (soma == 0){
+                posNeg = "nulo ou neutro"
+            }else if (soma > 0){
+                posNeg = "positivo"
+            }else{
+                posNeg = "negativo"
+            }
+            window.alert(`A soma dos valores é '${soma}', e o valor é ${posNeg}`)
+        }
+        </script>
+
+    <form action="" method="post">
+        <div class="campos">
+            <label for="inputNumber01">01</label>
+            <input type="number" placeholder="Digite um número" id="inputNumber01">
+            <label for="inputNumber02">02</label>
+            <input type="number" placeholder="Digite um número" id="inputNumber02">
+            <label for="inputNumber03">03</label>
+            <input type="number" placeholder="Digite um número" id="inputNumber03">        
+        </div>
+        <div id="somar">
+            <input type="submit" value="SOMAR" onclick="getInputsValues()">
+        </div>
+    </form>
+</body>
+</html>
