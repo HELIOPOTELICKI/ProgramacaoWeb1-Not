@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    background-image: url("https://uploaddeimagens.com.br/images/002/664/716/original/BackGround.png?1590097475");
+    background-repeat: no-repeat;
+    background-position: top left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+header {
+    border: 4px solid red;
+    font-size: 30px;
+    text-align: center;
+    width: 1450px;
+    height: 150px;
+    padding: 8px;
+    margin: 4px;
+}
+
+button.LoginBT {
+    background-color: rgba(199, 12, 12, 0);
+    border-color: rgba(199, 12, 12, 0);
+    position: absolute;
+    width: 188px;
+    height: 58px;
+    background-image: url("https://uploaddeimagens.com.br/images/002/664/936/original/Button-Login.png?1590106130");
+}
