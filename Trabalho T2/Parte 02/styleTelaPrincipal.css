@@ -13,7 +13,6 @@ body {
 }
 
 header {
-    border: 4px solid red;
     font-size: 30px;
     text-align: center;
     width: 1450px;
@@ -26,7 +25,76 @@ button.LoginBT {
     background-color: rgba(199, 12, 12, 0);
     border-color: rgba(199, 12, 12, 0);
     position: absolute;
+    right: 20px;
+    top: 20px;
     width: 188px;
     height: 58px;
     background-image: url("https://uploaddeimagens.com.br/images/002/664/936/original/Button-Login.png?1590106130");
+}
+
+.menuNavSUP ul li {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 50px;   
+    line-height: 50px; 
+    font-size: 22px;
+    position: relative;
+}
+
+.menuNavINF ul li {
+    background-color: #4B0202;
+    top: -13px;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 50px;   
+    line-height: 50px; 
+    font-size: 22px;
+    position: relative;
+}
+
+.menuNavINF ul ul {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 50px;   
+    line-height: 55px; 
+    font-size: 22px;
+    position: relative;
+}
+
+.menuNavSUP ul{
+    padding: 0px;
+}
+
+.menuNavINF ul{
+    padding: 0px;
+}
+
+.menuNavSUP ul li:hover{
+    background-color: #490a0a;
+}
+
+.menuNavINF ul li:hover{
+    background-color: #5a0e0e;
+}
+
+.menuNavINF ul ul {
+    background-color: #4B0202;
+    text-align: center;
+    position: absolute;
+    display: none;
+}
+
+.menuNavINF ul li:hover > ul{
+    display: block;
+    position: absolute;
+    top: 55px;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
 }
