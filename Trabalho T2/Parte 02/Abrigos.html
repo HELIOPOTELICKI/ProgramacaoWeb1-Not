@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleMain.css">
+    <title>Abrigos</title>
+</head>
+<body>
+    <header>
+        Sistema de Monitoramento e Alerta<br>de Eventos Extremos de Blumenau
+        <button id="LoginBT" class="LoginBT" ></button>
+            <script type="text/javascript">
+                document.getElementById("LoginBT").onclick = function () {
+                    location.href = "TelaLogin.html";
+                };
+            </script>
+    </header>
+
+    <nav class="menuNavSUP">
+        <ul>
+            <li><a href="TelaPrincipal.html">Início</a>
+            </li>
+
+            <li><a href="https://www.blumenau.sc.gov.br/">Blumenau</a>
+            </li>
+
+            <li><a href="TelaPrincipal.html">Nível do Rio</a>              
+            </li>
+
+            <li><a href="TelaPrincipal.html">Últimas Leituras</a>
+            </li>
+
+            <li><a href="TelaPrincipal.html">Mapa</a>              
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="menuNavINF">
+        <ul>
+            <li><a href="TelaPrincipal.html">Previsão</a>
+            </li>
+
+            <li><a href="https://www.blumenau.sc.gov.br/">Defesa Civil</a>
+                <ul>
+                    <li><a href="Abrigos.html">Abrigos</a></li>
+                </ul> 
+            </li>
+
+            <li><a href="TelaPrincipal.html">Contato</a>  
+                <ul>
+                    <li><a href="TelaFormulario.html">Fale Conosco</a></li>
+                    <li><a href="https://www.instagram.com/helio_potelicky/">Criador</a></li>
+                </ul>            
+            </li>
+        </ul>
+    </nav>
+
+    <table class="table-abrigos">
+        <thead>
+            <tr>
+                <th class="text-center">Local</th>
+                <th class="text-center">Logradouro</th>
+                <th class="text-center">Bairro</th>
+                <th class="text-center">Telefone</th>
+                <th class="text-center">Ativo</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr data-abrigo="183">
+                    <td>C1 – Colégio Policial Militar Feliciano Nunes Pires </td>
+                    <td class="text-center"> Floriano Peixoto, 651</td>
+                    <td class="text-center">Jardim Blumenau</td>
+                    <td nowrap="" class="text-center">(47) 3378-8284</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="184">
+                    <td>C2 – Catedral  São Paulo Apóstolo</td>
+                    <td class="text-center"> Padre Jacobs, 0</td>
+                    <td class="text-center">Centro</td>
+                    <td nowrap="" class="text-center">(47) 3322-0699</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="185">
+                    <td>C3 – Colégio Sagrada Família</td>
+                    <td class="text-center"> Sete de Setembro, 915</td>
+                    <td class="text-center">Centro</td>
+                    <td nowrap="" class="text-center">(47) 3326-0232</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="186">
+                    <td>C4 – FURB – Ginásio de Esportes</td>
+                    <td class="text-center"> Antônio da Veiga, 140</td>
+                    <td class="text-center">Itoupava Seca</td>
+                    <td nowrap="" class="text-center">(47) 3321-0200</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="187">
+                    <td>C5 – Associação Cultural e Esportiva Cremer - ACECREMER</td>
+                    <td class="text-center"> Joinville, 524</td>
+                    <td class="text-center">Vila Nova</td>
+                    <td nowrap="" class="text-center">(47) 3321-8500</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="188">
+                    <td>C6 – EEB Victor Hering</td>
+                    <td class="text-center"> Antônio C. de Figueiredo, 399</td>
+                    <td class="text-center">Vila Nova</td>
+                    <td nowrap="" class="text-center">(47) 3378-8496</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="189">
+                    <td>C7 – Ginásio EBM Machado de Assis</td>
+                    <td class="text-center"> Oscar Ewald, 0</td>
+                    <td class="text-center">Itoupava Seca</td>
+                    <td nowrap="" class="text-center">(47) 3381-6290</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="190">
+                    <td>N1 – Sociedade Esportiva Recreativa e Cultural Salto do Norte</td>
+                    <td class="text-center"> Engenheiro Udo Deeke, 0</td>
+                    <td class="text-center">Salto do Norte</td>
+                    <td nowrap="" class="text-center">(47) 3334-0505</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="191">
+                    <td>N2 – EBM Felipe Schmidt</td>
+                    <td class="text-center"> Frederico Jensen, 0</td>
+                    <td class="text-center">Itoupavazinha</td>
+                    <td nowrap="" class="text-center">(47) 3381-6688</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="192">
+                    <td>N3 – EEB Jonas Rosário Coelho Neves</td>
+                    <td class="text-center"> Denis Diderot, 0</td>
+                    <td class="text-center">Fidélis</td>
+                    <td nowrap="" class="text-center">(47) 3378-8682</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="193">
+                    <td>N4 – EBM Anita Garibaldi</td>
+                    <td class="text-center"> Dr. Pedro Zimmermann, 0</td>
+                    <td class="text-center">Itoupava Central</td>
+                    <td nowrap="" class="text-center">(47) 3338-17404</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="194">
+                    <td>N5 – EBM Wilhelm Theodor Schurmann </td>
+                    <td class="text-center"> Pérola do Vale, 377</td>
+                    <td class="text-center">Itoupava Central</td>
+                    <td nowrap="" class="text-center">(47) 3381-6505</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="195">
+                    <td>N6 – EBM Patrícia Helena Finardi Pegorim</td>
+                    <td class="text-center"> Luiz Krutzsch, 474</td>
+                    <td class="text-center">Itoupava Central</td>
+                    <td nowrap="" class="text-center">(47) 3323-8657</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="196">
+                    <td>N7 – EBM Professor Rodolfo Hollenweger</td>
+                    <td class="text-center"> Profº Hermann Lange, 0</td>
+                    <td class="text-center">Fidélis</td>
+                    <td nowrap="" class="text-center">(47) 3338-4085</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="197">
+                    <td>N8 – EBM Visconde de Taunay</td>
+                    <td class="text-center"> Franz Volles, 0</td>
+                    <td class="text-center">Itoupava Central</td>
+                    <td nowrap="" class="text-center">(47) 3378-5036</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="198">
+                    <td>N9 – EBM Professor Friedrich Karl Kemmelmeier</td>
+                    <td class="text-center"> Ricardo Georg, 0</td>
+                    <td class="text-center">Itoupava Central</td>
+                    <td nowrap="" class="text-center">(47) 3323-8901</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="199">
+                    <td>N10 – Paróquia Luterana Itoupava Central</td>
+                    <td class="text-center"> Dr. Pedro Zimmermann, 0</td>
+                    <td class="text-center">Itoupava Central</td>
+                    <td nowrap="" class="text-center">(47) 3337-1015</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="200">
+                    <td>N11 – EEB Cel Pedro Christiano Feddersen</td>
+                    <td class="text-center"> Henrique Conrad, 145</td>
+                    <td class="text-center">Vila Itoupava</td>
+                    <td nowrap="" class="text-center">(47) 3378-2289</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="201">
+                    <td>N12 – EM Erich Klabunde</td>
+                    <td class="text-center"> Braço do Sul, 0</td>
+                    <td class="text-center">Vila Itoupava</td>
+                    <td nowrap="" class="text-center">(47) 3222-3299</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="202">
+                    <td>N13 – EBM Leoberto Leal</td>
+                    <td class="text-center"> Johann Sachse, 0</td>
+                    <td class="text-center">Salto do Norte</td>
+                    <td nowrap="" class="text-center">(47) 3334-2466</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="203">
+                    <td>N14 – EBM Paulina Wagner</td>
+                    <td class="text-center"> Anna Felisbino, 125</td>
+                    <td class="text-center">Badenfurt</td>
+                    <td nowrap="" class="text-center">(47) 3334-0822</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="204">
+                    <td>N15 – EBM Joaquim Fronza</td>
+                    <td class="text-center"> Philipp Bauler, 0</td>
+                    <td class="text-center">Testo Salto</td>
+                    <td nowrap="" class="text-center">(47) 3378-2347</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="205">
+                    <td>N16 – EBM Quintino Bocaiúva</td>
+                    <td class="text-center"> Werner Duwe, 0</td>
+                    <td class="text-center">Testo Salto</td>
+                    <td nowrap="" class="text-center">(47) 3334-6470</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="206">
+                    <td>S1 – Grupo Escoteiro Leões de Blumenau</td>
+                    <td class="text-center"> Pastor Oswaldo Hesse, 0</td>
+                    <td class="text-center">Ribeirão Fresco</td>
+                    <td nowrap="" class="text-center">(47) 3322-0135</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="207">
+                    <td>S3 – Paróquia Luterana Centro</td>
+                    <td class="text-center"> Amazonas, 119</td>
+                    <td class="text-center">Garcia</td>
+                    <td nowrap="" class="text-center">(47) 3322-0397</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="208">
+                    <td>S5 – EBM Tiradentes e Profª Júlia Strzalkowska</td>
+                    <td class="text-center"> Carl Heinz Buechler, 171</td>
+                    <td class="text-center">Garcia</td>
+                    <td nowrap="" class="text-center">(47) 3381-7258</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="209">
+                    <td>S6 – EEB Santos Dumont</td>
+                    <td class="text-center"> Amazonas, 0</td>
+                    <td class="text-center">Garcia</td>
+                    <td nowrap="" class="text-center">(47) 3378-8686</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="210">
+                    <td>S7 – EEB Izolete Elisa Gouveia Muller</td>
+                    <td class="text-center"> Adriano Schaeffer, 77</td>
+                    <td class="text-center">Valparaíso</td>
+                    <td nowrap="" class="text-center">(47) 3378-8378</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="211">
+                    <td>S8 – Capela Santa Luzia</td>
+                    <td class="text-center"> Araranguá, 0</td>
+                    <td class="text-center">Garcia</td>
+                    <td nowrap="" class="text-center">(47) 3326-2328</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="212">
+                    <td>S9 – Centro Municipal de Ampliação do Tempo e Espaço Pedagógico da Criança e do Adolescente (Cematepca)</td>
+                    <td class="text-center"> Araranguá, 648</td>
+                    <td class="text-center">Garcia</td>
+                    <td nowrap="" class="text-center">(47) 3335-1825</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="213">
+                    <td>S10 – Paróquia Santo Antônio</td>
+                    <td class="text-center"> Amazonas, 0</td>
+                    <td class="text-center">Garcia</td>
+                    <td nowrap="" class="text-center">(47) 3324-0565</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="215">
+                    <td>S13 – EEB Governador Celso Ramos</td>
+                    <td class="text-center"> Da Glória, 888</td>
+                    <td class="text-center">Glória</td>
+                    <td nowrap="" class="text-center">(47) 3378-8229</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="216">
+                    <td>S14 – EEB Padre José Maurício</td>
+                    <td class="text-center"> Progresso, 0</td>
+                    <td class="text-center">Progresso</td>
+                    <td nowrap="" class="text-center">(47) 3378-8680</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="217">
+                    <td>S15 – EBM Henrique Alfarth</td>
+                    <td class="text-center"> Ruy Barbosa, 1616</td>
+                    <td class="text-center">Progresso</td>
+                    <td nowrap="" class="text-center">(47) 3326-1449</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="218">
+                    <td>S17 – EEB Professor Nilo Borghesi</td>
+                    <td class="text-center"> Jordão, 357</td>
+                    <td class="text-center">Progresso</td>
+                    <td nowrap="" class="text-center">(47) 3378-8372</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="219">
+                    <td>S18 – EBM Pedro II</td>
+                    <td class="text-center"> Helmuth Goll, 579</td>
+                    <td class="text-center">Progresso</td>
+                    <td nowrap="" class="text-center">(47) 3336-5628</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="220">
+                    <td>S19 – EEF José Vieira Corte</td>
+                    <td class="text-center"> Udo Schadrack, 41</td>
+                    <td class="text-center">Progresso</td>
+                    <td nowrap="" class="text-center">(47) 3378-8379</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="221">
+                    <td>E1 – Clube Blumenauense de Caça e Tiro</td>
+                    <td class="text-center"> Itajaí, 0</td>
+                    <td class="text-center">Vorstardt</td>
+                    <td nowrap="" class="text-center">(47) 3340-5635</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="222">
+                    <td>E2 – EBM Vidal Ramos</td>
+                    <td class="text-center"> Antônio Treis, 140</td>
+                    <td class="text-center">Vorstardt</td>
+                    <td nowrap="" class="text-center">(47) 3381-6594</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="223">
+                    <td>E3 – EBM Almirante Tamandaré</td>
+                    <td class="text-center"> Santa Fé, 66</td>
+                    <td class="text-center">Ponta Aguda</td>
+                    <td nowrap="" class="text-center">(47) 3340-1264</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="224">
+                    <td>E4 – EEB Júlia Lopes de Almeida</td>
+                    <td class="text-center"> Venezuela, 127</td>
+                    <td class="text-center">Ponta Aguda</td>
+                    <td nowrap="" class="text-center">(47) 3378-8381</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="225">
+                    <td>E5 – EBM Gustavo Richard</td>
+                    <td class="text-center"> Henrique Reif, 477</td>
+                    <td class="text-center">Nova Esperança</td>
+                    <td nowrap="" class="text-center">(47) 3323-9400</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="226">
+                    <td>E6 – Capela São João Batista</td>
+                    <td class="text-center"> São João, 0</td>
+                    <td class="text-center">Itoupava Norte</td>
+                    <td nowrap="" class="text-center">(47) 3323-3236</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="227">
+                    <td>E7 – Clube de Caça e Tiro Tell (Antigo)</td>
+                    <td class="text-center"> 2 de Setembro, 0</td>
+                    <td class="text-center">Itoupava Norte</td>
+                    <td nowrap="" class="text-center">(47) 3323-6064</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="228">
+                    <td>E8 – Danceteria  Rivage</td>
+                    <td class="text-center"> 25 de Julho, 907</td>
+                    <td class="text-center">Itoupava Norte</td>
+                    <td nowrap="" class="text-center">(47) 3323-2296</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="229">
+                    <td>E9 – Igreja Evangélica Livre de Blumenau - IELBLU</td>
+                    <td class="text-center"> Cidade do Salvador, 89</td>
+                    <td class="text-center">Itoupava Norte</td>
+                    <td nowrap="" class="text-center">(47) 3338-0000</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="230">
+                    <td>E10 – Paróquia São Francisco de Assis</td>
+                    <td class="text-center"> Francisco Vahldieck, 0</td>
+                    <td class="text-center">Fortaleza</td>
+                    <td nowrap="" class="text-center">(47) 3339-0775</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="231">
+                    <td>E11 – EEB Hermann Hamann</td>
+                    <td class="text-center"> August Reinhold, 0</td>
+                    <td class="text-center">Nova Esperança</td>
+                    <td nowrap="" class="text-center">(47) 3378-8389</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="232">
+                    <td>E12 – EBM Francisco Lanser</td>
+                    <td class="text-center"> Alfredo Lanser, 133</td>
+                    <td class="text-center">Tribess</td>
+                    <td nowrap="" class="text-center">(47) 3381-6340</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="233">
+                    <td>W1 – Paróquia Luterana da Velha</td>
+                    <td class="text-center"> João Pessoa, 0</td>
+                    <td class="text-center">Velha</td>
+                    <td nowrap="" class="text-center">(47) 3329-4379</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="234">
+                    <td>W2 – EBM Helena Winckler</td>
+                    <td class="text-center"> João Bisewski, 100</td>
+                    <td class="text-center">Velha</td>
+                    <td nowrap="" class="text-center">(47) 3328-6605</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="235">
+                    <td>W3 – EEB Hercílio Deeke</td>
+                    <td class="text-center"> José Reuter, 581</td>
+                    <td class="text-center">Velha Central</td>
+                    <td nowrap="" class="text-center">(47) 3378-8390</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="236">
+                    <td>W4 – EBM Conselheiro Mafra</td>
+                    <td class="text-center"> Franz Muller, 0</td>
+                    <td class="text-center">Velha Grande</td>
+                    <td nowrap="" class="text-center">(47) 3381-6545</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="237">
+                    <td>W5 – EEB João Durval Muller</td>
+                    <td class="text-center"> Karl Kaun, 60</td>
+                    <td class="text-center">Velha Central</td>
+                    <td nowrap="" class="text-center">(47) 3378-8703</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="238">
+                    <td>W6 – EBM General Lúcio Esteves</td>
+                    <td class="text-center"> Benjamin Constant, 630</td>
+                    <td class="text-center">Escola Agrícola</td>
+                    <td nowrap="" class="text-center">(47) 3381-7444</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="239">
+                    <td>W7 – EBM Professora Norma Dignart Huber</td>
+                    <td class="text-center"> Aquidabã, 77</td>
+                    <td class="text-center">Escola Agrícola</td>
+                    <td nowrap="" class="text-center">(47) 3338-1722</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="240">
+                    <td>W8 – EBM Hella Altemburg</td>
+                    <td class="text-center"> Plátano, 233</td>
+                    <td class="text-center">Do Salto</td>
+                    <td nowrap="" class="text-center">(47) 3327-1433</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="241">
+                    <td>W9 – EBM Alberto Stein</td>
+                    <td class="text-center"> General Osório, 0</td>
+                    <td class="text-center">Água Verde</td>
+                    <td nowrap="" class="text-center">(47) 3325-1424</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="242">
+                    <td>W10 – EBM Annemarie Techentin</td>
+                    <td class="text-center"> Johann G. H. Hadlich, 999</td>
+                    <td class="text-center">Passo Manso</td>
+                    <td nowrap="" class="text-center">(47) 3330-9335</td>
+                    <td class="text-center">Não</td>
+                </tr>
+            
+                <tr data-abrigo="261">
+                    <td>N17 - EEB Erwin Radtke</td>
+                    <td class="text-center">Rua: Erwin Manske, 13375</td>
+                    <td class="text-center">Vila Itoupava</td>
+                    <td nowrap="" class="text-center">(48) 3664-4788</td>
+                    <td class="text-center">Não</td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+</html>
