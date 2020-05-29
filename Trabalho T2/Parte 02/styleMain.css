@@ -13,6 +13,20 @@ body {
     align-content: space-around;
 }
 
+body.Login {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    background-image: url("https://uploaddeimagens.com.br/images/002/679/740/original/BackGroudLogin.png?1590786864");
+    background-repeat: no-repeat;
+    background-position: top left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
 /* Header */
 header {
     font-size: 30px;
@@ -105,18 +119,37 @@ main {
     width: 1600px;
     height: auto;
     margin-top: -27px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+div.mainBackground {
+    width: 1600px;
+    height: 900px;
+    margin-top: 0px;
     background-image: url("https://uploaddeimagens.com.br/images/002/678/532/original/Background-Rain2.gif?1590763768");
     background-size: 1600px 900px;
     background-repeat: no-repeat;
     background-position: top center;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
-    -moz-box-shadow:inset 0px 0px 8px 5px #000000;
+    -moz-box-shadow:   inset 0px 0px 8px 5px #000000;
     -webkit-box-shadow:inset 0px 0px 8px 5px #000000;
-    box-shadow:inset 0px 0px 8px 5px #000000;
+    box-shadow:        inset 0px 0px 8px 5px #000000;
+}
+
+#containerAbrigoFT {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
 
 /* Footer */
@@ -129,6 +162,10 @@ footer {
     height: 150px;
     padding: 8px;
     margin-top: 50px;
+}
+
+footer.footerAbrigo {
+    margin-top: 900px;
 }
 
 /* Tabela Abrigos */
@@ -154,16 +191,32 @@ table tr td:hover{
     border: 2px solid black;
 } 
 
+table.tableAbrigos {
+    margin-top: 20px;
+}
+
 /* Forecasting */
 #forecasting {
-    margin-top: 150px;
-    width: 1000px;
-    height: 500px;
+    align-items: center;
+    margin-top: 100px;
 }
 
 /* Maps */
 #GoogleMaps {
-    margin-top: 150px;
-    width: 1000px;
-    height: 500px;
+    width: 1000px; 
+    height: 900px;
+    align-items: center;
+    margin-top: -150px;
+    margin-bottom: -150px;
+}
+
+/* Login */
+div.LoginPanel {
+    background-color: rgb(85, 85, 85);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    text-align: center;
+    width: 650px;
+    height: 1080px;
 }

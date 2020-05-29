@@ -1,0 +1,74 @@
+<div class="page-login-main animation-slide-right animation-duration-1">
+
+
+    <div class="loginerrors mt-1">
+        <div class="alert alert-icon alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <a href="#" id="loginerrormessage" class="text-danger">Nome de usuário ou senha errados. Por favor tente outra vez.</a>
+        </div>
+    </div>
+
+<div class="brand  text-center">
+          <h3 class="font-size-24">
+              <i class="fa fa-graduation-cap"></i> AVA3
+          </h3>
+      
+</div>
+
+<h3 class="font-size-24">Iniciar sessão</h3>
+
+<form class="w-p100" action="https://ava3.furb.br/login/index.php" method="post" id="login">
+    <input id="anchor" type="hidden" name="anchor" value="">
+    <script>document.getElementById('anchor').value = location.hash;</script>
+
+    <div class="form-group">
+        <label for="username" class="sr-only">
+                Identificação de usuário
+        </label>
+
+        <input type="text" class="form-control" id="username" name="username" placeholder="Identificação de usuário">
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="sr-only">Senha</label>
+        <input type="password" name="password" id="password" value="" class="form-control" placeholder="Senha">
+    </div>
+    <div class="form-group">
+       <input type="hidden" name="logintoken" value="EwB47eXU0kuXPg1uP7YL9BVWCjn7vaFo">
+    </div>
+    
+    <div class="form-group clearfix">
+            <div class="checkbox-custom checkbox-inline checkbox-primary float-left rememberpass">
+                <input type="checkbox" id="rememberusername" name="rememberusername" value="1" checked="checked">
+                <label for="rememberusername">Lembrar identificação de usuário</label>
+            </div>
+        <a class="float-right" href="https://ava3.furb.br/login/forgot_password.php">Esqueceu sua senha?</a>
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-block" id="loginbtn">Acessar</button>
+</form>
+
+
+
+<!-- <div class="forgetpass m-t-1">
+    <p><a href="https://ava3.furb.br/login/forgot_password.php">Esqueceu o seu usuário ou senha?</a></p>
+</div> -->
+
+<div class="hidden-xs-up">
+    O uso de Cookies deve ser permitido no seu navegador
+    <a class="btn btn-link p-0" role="button" data-container="body" data-toggle="popover" data-placement="left" data-content="<div class=&quot;no-overflow&quot;><p>Dois cookies são utilizados por este site:</p>
+
+<p>O essencial é o cookie da sessão, geralmente chamado MoodleSession. Você deve permitir este cookie no seu navegador para prover continuidade e manter seu login de página para página. Quando você fizer o &quot;logout&quot; ou fechar o navegador este cookie é destruído (no seu navegador e no servidor).</p>
+
+<p>O outro cookie é puramente por conveniência, geralmente chamado de algo como MOODLEID. Ele apenas lembra seu &quot;username&quot; no navegador. Isso significa que quando você retornar a este site, o campo &quot;usuário&quot; na página de autenticação será automaticamente preenchido para você. É seguro recusar este cookie - você apenas terá que redigitar o seu usuário toda vez que você autenticar.</p>
+</div> " data-html="true" tabindex="0" data-trigger="focus" data-original-title="" title="">
+<i class="icon fa fa-question-circle text-info fa-fw " title="Ajuda com O uso de Cookies deve ser permitido no seu navegador" aria-label="Ajuda com O uso de Cookies deve ser permitido no seu navegador"></i>
+</a>
+</div>
+
+
+<footer class="page-copyright">
+</footer>
+</div>
