@@ -6,9 +6,38 @@
     <title>Entrar / Cadastro</title>
     <link rel="stylesheet" href="styleMain.css">
 </head>
+
 <body class="Login">
+
+    <script>
+        function VerificaLogin() {
+            
+        }
+            
+    </script>
+
     <div class="LoginPanel">
-        
+
+        <img src="https://uploaddeimagens.com.br/images/002/679/975/original/Logo.png?1590791779" class="center" width="200px" height="200px" >
+
+        <h3 class="T1">Iniciar sessão</h3>
+
+        <input type="username" name="username" id="username" value="" class="form-control" placeholder="Usuário">
+
+        <input type="password" name="password" id="password" value="" class="form-control" placeholder="Senha">
+
+            <div class="checkedAlig">
+                <input type="checkbox" id="rememberusername" name="rememberusername" value="1" checked="checked">
+                <label for="rememberusername">Lembrar identificação de usuário</label>
+            </div>
+
+        <a class="float-right" href="TelaPrincipal.html">Esqueceu sua senha?</a>
+
+        <button type="submit" class="AcessarBtn" id="loginbtn" onclick="VerificaLogin()">Acessar</button>
+
+        <a class="float-left" href="TelaPrincipal.html">Não é cadastrado? cadastre-se aqui.</a>
+
     </div>
+
 </body>
 </html>
