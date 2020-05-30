@@ -4,8 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fale Conosco</title>
+    <link rel="stylesheet" href="styleMain.css">
 </head>
 <body>
-    <h1>Fale Conosco</h1>
+    <header>
+        Sistema de Monitoramento e Alerta<br>de Eventos Extremos de Blumenau
+        <button id="LoginBT" class="LoginBT"></button>
+            <script type="text/javascript">
+                document.getElementById("LoginBT").onclick = function () {
+                    location.href = "TelaLogin.html";
+                };
+            </script>
+    </header>
+
+    <nav class="menuNavSUP">
+        <ul>
+            <li><a href="TelaPrincipal.html">Início</a>
+            </li>
+    
+            <li><a href="https://www.blumenau.sc.gov.br/">Blumenau</a>
+            </li>
+
+            <li><a href="TelaPrincipal.html #forecastingSelected">Previsão</a>
+            </li>
+
+            <li><a href="TelaPrincipal.html #GoogleMaps">Mapa</a>              
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="menuNavINF">
+        <ul>    
+            <li>Defesa Civil</a>
+                <ul>
+                    <li><a href="Abrigos.html">Abrigos</a></li>
+                </ul> 
+            </li>
+
+            <li>Contato</a>  
+                <ul>
+                    <li><a href="TelaFormulario.html #formulario">Fale Conosco</a></li>
+                    <li><a href="https://www.instagram.com/helio_potelicky/">Criador</a></li>
+                </ul>            
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <script>
+            function isEmpty(value) {
+                if(value == ""){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            function clearInputs() {
+              document.getElementById("FormtoClear").reset();
+            }
+
+            function sendInputs() {
+                var nome = document.getElementById("nomeForm").value.toString();
+                var email = document.getElementById("emailForm").value.toString();
+                var mensagem = document.getElementById("mensagemForm").value.toString();
+                
+                if (isEmpty(nome)){
+                    window.alert("Insira seu nome")
+                }else if (isEmpty(email)){
+                    window.alert("Insira um Email")
+                }else if (isEmpty(mensagem)){
+                    window.alert("Insira sua mensagem")
+                }else{
+                    document.getElementById("FormtoClear").reset();
+                    window.alert("Formulário enviado com sucesso!")
+                }
+            }
+        </script>
+
+        <div class="mainBackground">
+            <div class="formulario" id="formulario">
+                <h2 class="obrigatorios"><strong>*</strong> Campos Obrigatórios</h2>
+                <div class="CamposForm"> 
+                    <form id="FormtoClear"> 
+                        <input type="text" id="nomeForm" name="nome" placeholder="Nome Completo*" class="form-control">    <br>
+                        <input type="text" id="telefoneForm" name="telefone" placeholder="Telefone" class="form-control"> <br>
+                        <input type="email" id="emailForm" name="email" placeholder="Email*" class="form-control">         <br>
+                        <textarea class="scrollabletextbox" id="mensagemForm" name="mensagem" placeholder="Mensagem*" class="form-control-mensagem"></textarea>
+                    </form>
+                    
+                    <div class="BtnsForm">
+                        <button type="submit" value="Submit" class="FormBTNS" onclick="sendInputs()">Enviar</button>
+                        <button type="reset"  value="Reset" class="FormBTNS" onclick="clearInputs()">Limpar</button>
+                    </div>
+                    <div class="Enviado"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <br>Site em desenvolvimento por Hélio Potelicki, Victor Konder - CEP: 89012.510 - Blumenau/SC - Brasil
+        <br>Contato: (47) 99621-0308 - Email: helio.p2000@hotmail.com
+        <br>Horário de Atendimento: das 18h30 às 22h00
+    </footer>
 </body>
 </html>

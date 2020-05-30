@@ -7,18 +7,45 @@
     <link rel="stylesheet" href="styleMain.css">
 </head>
 
-<body class="Login">
-
+<body class="Login" scroll="no" style="overflow: hidden">
     <script>
-        function VerificaLogin() {
-            
+        function isEmpty(value) {
+            if(value == ""){
+                return true;
+            }else{
+                return false;
+            }
         }
-            
+
+        function isValidPassword(value) {
+            if (isEmpty(value)){
+                return ([true, 'Senha incorreta'])
+            }else if(value.length < 8){
+                return ([true, 'Senha deve conter no mínimo 8 caracteres'])
+            }else{
+                location.href = "TelaPrincipal.html";
+            }
+        }
+
+        function VerificaLogin() {
+            var userName = document.getElementById("username").value.toString();
+            var passWord = document.getElementById("password").value.toString();
+
+            document.getElementById("verificaSenha").innerHTML = "";
+
+            if (isEmpty(userName)) {
+                document.getElementById("verificaSenha").append('Campo "Usuário" não pode estar vazio!');
+            }else if (isValidPassword(passWord)[0]){
+                document.getElementById("verificaSenha").append(isValidPassword(passWord)[1].toString());
+            }
+        }
     </script>
 
     <div class="LoginPanel">
 
         <img src="https://uploaddeimagens.com.br/images/002/679/975/original/Logo.png?1590791779" class="center" width="200px" height="200px" >
+
+        <div id="verificaSenha" class="verificaSenha"></div>
 
         <h3 class="T1">Iniciar sessão</h3>
 
