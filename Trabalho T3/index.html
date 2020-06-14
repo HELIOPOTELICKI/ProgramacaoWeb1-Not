@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Empregados</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script>
+        function autoRefresh() {
+            window.location.reload();
+        }
+
+        function aparece() {
+            document.getElementById('EscondeEditor').style.cssText = 'visibility: visible;';
+        }
+
+        function esconde() {
+            document.getElementById('EscondeEditor').style.cssText = 'visibility: hidden;';
+        }
+
+        function confirmacaoExcluirAP(id) {
+            console.log("-> " + id + " <-");
+            document.getElementById('AlertaExcluir').style.cssText = 'visibility: visible;';
+
+            function excluir() {
+                excluir(this);
+            }
+
+            function excluir(id){
+                console.log(id + ' Apagado');
+            }
+        }
+
+        function confirmacaoExcluirDSP() {
+            document.getElementById('AlertaExcluir').style.cssText = 'visibility: hidden;';
+        }
+
+        function clearInputs() {
+            document.getElementById("camposNovoEmpregado").reset();
+        }
+
+        function clearInputsEdit() {
+            document.getElementById("camposEditEmpregado").reset();
+            esconde();
+        }
+
         function CreateTableFromJSON(data) {
             var myData = data
             var col = [];
@@ -36,7 +74,7 @@
                 for (var j = 0; j < col.length; j++) { 
                     if (j == col.length-1){
                         var tabCell = tr.insertCell(-1);
-                        if (myData[i][col[j]] == null){
+                        if (myData[i][col[j]] == null || myData[i][col[j]] == ""){
                             tabCell.innerHTML = '<img src="https://uploaddeimagens.com.br/images/002/704/944/full/Avatar-Default.png?1592020730" width="50" height="50">';
                         }else{
                             tabCell.innerHTML = '<img src="'+myData[i][col[j]]+'" width="50" height="50">';
@@ -52,7 +90,9 @@
                     }
                     if (j == col.length-1){
                         var tabCell = tr.insertCell(-1);
-                        tabCell.innerHTML = "Editar | Excluir";
+                        var id = String(myData[i][col[0]]);
+                        var aux = String('<a onclick="aparece()">Editar</a> | <a onclick="confirmacaoExcluirAP(\'' + id + '\');">Excluir</a>');
+                        tabCell.innerHTML = aux;
                     }
                 }
             }
@@ -74,7 +114,112 @@
         xhttp.open("GET", "https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/employees", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send();
+
+        function saveInputs() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4){ 
+                    if (this.status == 200){
+                        autoRefresh();
+                    }
+                }
+            };
+
+            xhttp.open("POST", "https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/create", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+
+            var NewEmpregado = {
+                name: document.getElementById("nome").value,
+                salary: document.getElementById("salario").value,
+                age: document.getElementById("idade").value,
+                profile_image: document.getElementById("avatar").value
+            };
+            xhttp.send(JSON.stringify(NewEmpregado));   
+        }
     </script>
-<p id="showData"></p>
+
+<div class="BodyMain">
+    <p id="showData"></p>
+    <div class="EditaAdiciona">
+        <div id="NovoEmpregado" class="NovoEmpregado">  
+            <div class="alinhaNovoEmpregado">
+                <form id="camposNovoEmpregado" class="camposNovoEmpregado" >
+                    <p>
+                        <h3>
+                            Adicionando novo Empregado
+                        </h3>
+                    </p>
+                    <p>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome Completo" class="form-control">    
+                    </p>
+                    <p>
+                    <label for="salario">Salário: </label>
+                    <input type="number" id="salario" name="salario" placeholder="Salário" class="form-control">  
+                    </p>
+                    <p>
+                    <label for="idade">Idade: </label>
+                    <input type="number" id="idade" name="idade" placeholder="Idade" class="form-control">   
+                    </p>
+                    <p>
+                    <label for="avatar">Avatar: </label>
+                    <input type="url" id="avatar" name="avatar" placeholder="http://url.do.avatar" class="form-control"> 
+                    </p>
+                </form>
+            </div>
+    
+            <div id="BTNNovoEmpregado" class="BTNNovoEmpregado">
+                <button type="submit" value="Submit" class="FormBTNS" onclick="saveInputs()">Salvar</button>
+                <button type="reset"  value="Reset" class="FormBTNS" onclick="clearInputs()">Cancelar</button>
+            </div>
+        </div>
+
+        <div id="EscondeEditor" class="EscondeEditor">
+            <div id="NovoEmpregado" class="NovoEmpregado">  
+                <div class="alinhaNovoEmpregado">
+                    <form id="camposEditEmpregado" class="camposEditEmpregado" >
+                        <p>
+                            <h3>
+                                Editor de Empregado
+                            </h3>
+                        </p>
+                        <p>
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="nomeEdit" name="nome" placeholder="Nome Completo" class="form-control">    
+                        </p>
+                        <p>
+                        <label for="salario">Salário: </label>
+                        <input type="number" id="salarioEdit" name="salario" placeholder="Salário" class="form-control">  
+                        </p>
+                        <p>
+                        <label for="idade">Idade: </label>
+                        <input type="number" id="idadeEdit" name="idade" placeholder="Idade" class="form-control">   
+                        </p>
+                        <p>
+                        <label for="avatar">Avatar: </label>
+                        <input type="url" id="avatarEdit" name="avatar" placeholder="http://url.do.avatar" class="form-control"> 
+                        </p>
+                    </form>
+                </div>
+        
+                <div id="BTNNovoEmpregado" class="BTNNovoEmpregado">
+                    <button type="submit" value="Submit" class="FormBTNS" onclick="saveInputs()">Salvar</button>
+                    <button type="reset"  value="Reset" class="FormBTNS" onclick="clearInputsEdit()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="AlertaExcluir" class="AlertaExcluir">
+        <form class="AlertaExcluir">
+          <h3>Deseja realmente excluir este empregado?</h3>
+          <div id="BTNExcluir" class="BTNExcluir">
+            <button type="submit" value="Submit" class="FormBTNS" onclick="excluir()">Confirmar</button>
+            <button type="reset"  value="Reset" class="FormBTNS" onclick="confirmacaoExcluirDSP()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+</div>
 </body>
 </html>

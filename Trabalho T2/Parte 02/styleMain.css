@@ -359,3 +359,11 @@ h2.obrigatorios {
     right: 40px;
     top: 20px;
 }
+
+div.alinhaNovoEmpregado {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin-left: -500px;
+}

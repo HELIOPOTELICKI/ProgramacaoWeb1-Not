@@ -24,5 +24,103 @@ table {
 }
  
 table, td {
+    border: 2px solid black;
+}
+
+div.NovoEmpregado {
     border: 1px solid black;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    width: 500px;
+    height: 300px;
+    padding: 8px;
+    margin-top: 16px;
+    margin-left: 2px;
+}
+
+.NovoEmpregado input {
+  width: 100%;
+  clear: both;
+}
+
+p { 
+    display: table-row;  
+}
+
+label { 
+    width: auto;
+    height: 20px; 
+    display: table-cell; 
+}
+
+input {
+    margin-left: 20px;
+    display: table-cell; 
+}
+
+input.form-control {
+    width: 300px;
+    height: 20px; 
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+button.FormBTNS {
+    font-size: 18px;
+    margin-top: 30px;
+    width: 100px;
+    height: 50px;  
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div.alinhaNovoEmpregado {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+}
+
+div.BodyMain {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+div.EditaAdiciona {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+div.EscondeEditor {
+    visibility: hidden;
+}
+
+form.AlertaExcluir {
+    margin: auto;
+    width: auto;
+    padding: 2em;
+    border: 10px solid rgb(255, 0, 0);
+    border-radius: 4em;
+    background-color: rgb(119, 119, 119);
+}
+
+div.BTNExcluir {
+   margin-left: 55px;
+}
+
+div.AlertaExcluir {
+    visibility: hidden;
+    position: absolute;
+    top: 35%;
+    left: 35%;
 }
