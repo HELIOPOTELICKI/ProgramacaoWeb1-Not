@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import './components/script.js';
-import * as SCPT from './components/script.js';
+import * as SCPT from './components/script';
 
 function App() {
   return (
@@ -74,8 +74,6 @@ function App() {
               <div id="BTNNovoEmpregado" className="BTNNovoEmpregado">
                 <button id="UpdateEmpregado" type="submit" value="Submit" className="FormBTNS">Salvar</button>
                 <button type="reset" value="Reset" className="FormBTNS" onClick= { SCPT.clearInputsEdit }>Cancelar</button>
-              
-
               </div>
             </div>
           </div>

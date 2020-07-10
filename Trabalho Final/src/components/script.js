@@ -7,9 +7,9 @@ function autoRefresh() {
 function aparece(id) {
     document.getElementById('EscondeEditor').style.cssText = 'visibility: visible;';
 
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        var dataReturned = JSON.parse(this.responseText);
+        let dataReturned = JSON.parse(this.responseText);
         $("#nomeEdit").val(dataReturned.data.employee_name);
         $("#salarioEdit").val(dataReturned.data.employee_salary);
         $("#idadeEdit").val(dataReturned.data.employee_age);
@@ -20,12 +20,12 @@ function aparece(id) {
     xhttp.send();
 
     $("#UpdateEmpregado").on("click",function() {  
-        var url = 'http://rest-api-employees.jmborges.site/api/v1/update/' + id;
-        var xhttp = new XMLHttpRequest();
+        let url = 'http://rest-api-employees.jmborges.site/api/v1/update/' + id;
+        let xhttp = new XMLHttpRequest();
         xhttp.open("PUT", url, false);
         xhttp.setRequestHeader("Content-type", "application/json");
 
-        var updateEmpregado = {
+        let updateEmpregado = {
             name: document.getElementById("nomeEdit").value,
             salary: document.getElementById("salarioEdit").value,
             age: document.getElementById("idadeEdit").value,
@@ -46,14 +46,14 @@ function confirmacaoExcluirAP(id) {
     document.getElementById('AlertaExcluir').style.cssText = 'visibility: visible;';
 
     $("#confirmaExcluiu").on("click",function() {  
-        var url = 'http://rest-api-employees.jmborges.site/api/v1/delete/' + id;
-        var xhttp = new XMLHttpRequest();
+        let url = 'http://rest-api-employees.jmborges.site/api/v1/delete/' + id;
+        let xhttp = new XMLHttpRequest();
         xhttp.open("DELETE", url, false);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send();
     });
 
-}
+};
 
 function confirmacaoExcluirDSP() {
     document.getElementById('AlertaExcluir').style.cssText = 'visibility: hidden;';
@@ -69,65 +69,65 @@ function clearInputsEdit() {
 }
 
 function CreateTableFromJSON(data) {
-    var myData = data
-    var col = [];
-    for (var i = 0; i < myData.length; i++) {
-        for (var key in myData[i]) {
+    let myData = data
+    let col = [];
+    for (let i = 0; i < myData.length; i++) {
+        for (let key in myData[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
             }
         }
     }
 
-    var table = document.createElement("table");
-    var tr = table.insertRow(-1);
+    let table = document.createElement("table");
+    let tr = table.insertRow(-1);
 
-    var headT = ["ID", "Nome", "Salário", "Idade", "Avatar", "Ações"];
-    for (var i = 0; i < headT.length; i++) {
-        var th = document.createElement("th");
+    let headT = ["ID", "Nome", "Salário", "Idade", "Avatar", "Ações"];
+    for (let i = 0; i < headT.length; i++) {
+        let th = document.createElement("th");
         th.innerHTML = headT[i];
         tr.appendChild(th);
     }
 
-    for (var i = 0; i < myData.length; i++) {
+    for (let i = 0; i < myData.length; i++) {
 
         tr = table.insertRow(-1);
 
-        for (var j = 0; j < col.length; j++) { 
-            if (j == col.length-1){
-                var tabCell = tr.insertCell(-1);
-                if (myData[i][col[j]] == null || myData[i][col[j]] == ""){
+        for (let j = 0; j < col.length; j++) { 
+            if (j === col.length-1){
+                let tabCell = tr.insertCell(-1);
+                if (myData[i][col[j]] === null || myData[i][col[j]] === ""){
                     tabCell.innerHTML = '<img src="https://uploaddeimagens.com.br/images/002/704/944/full/Avatar-Default.png?1592020730" width="50" height="50">';
                 }else{
                     tabCell.innerHTML = '<img src="'+myData[i][col[j]]+'" width="50" height="50">';
                 }
             }else{
-                if (j == col.length-3){
-                    var tabCell = tr.insertCell(-1);
+                if (j === col.length-3){
+                    let tabCell = tr.insertCell(-1);
                     tabCell.innerHTML = parseFloat(myData[i][col[j]]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 }else{
-                    var tabCell = tr.insertCell(-1);
+                    let tabCell = tr.insertCell(-1);
                     tabCell.innerHTML = myData[i][col[j]];
                 }
             }
-            if (j == col.length-1){
-                var tabCell = tr.insertCell(-1);
-                var id = String(myData[i][col[0]]);
-                var aux = String('<a onClick={ aparece( id )}  >Editar</a> | <a onClick={ confirmacaoExcluirAP( id )}>Excluir</a>');
+            if (j === col.length-1){
+                let tabCell = tr.insertCell(-1);
+                let id = String(myData[i][col[0]]);
+                let aux = `<button onClick = "aparece('${id}')">Editar</button> | <button onClick = "confirmacaoExcluirAP('${id}')">Excluir</button>`;
                 tabCell.innerHTML = aux;
             }
         }
     }
-    var divContainer = document.getElementById("showData");
+    let divContainer = document.getElementById("showData");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
 }
 
-var xhttp = new XMLHttpRequest();
+let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-    if (this.readyState == 4){ 
-        if (this.status == 200){
-            var dataReturned = JSON.parse(this.responseText);
+    if (this.readyState === 4){ 
+        if (this.status === 200){
+            let dataReturned = JSON.parse(this.responseText);
             CreateTableFromJSON(dataReturned.data);
         }
     }
@@ -138,10 +138,10 @@ xhttp.setRequestHeader("Content-type", "application/json");
 xhttp.send();
 
 function saveInputs() {
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4){ 
-            if (this.status == 200){
+        if (this.readyState === 4){ 
+            if (this.status === 200){
                 autoRefresh();
             }
         }
@@ -150,7 +150,7 @@ function saveInputs() {
     xhttp.open("POST", "http://rest-api-employees.jmborges.site/api/v1/create", true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
-    var NewEmpregado = {
+    let NewEmpregado = {
         name: document.getElementById("nome").value,
         salary: document.getElementById("salario").value,
         age: document.getElementById("idade").value,
