@@ -4,7 +4,7 @@ function autoRefresh() {
     window.location.reload();
 }
 
-function aparece(id) {
+const aparece = id => {
     document.getElementById('EscondeEditor').style.cssText = 'visibility: visible;';
 
     let xhttp = new XMLHttpRequest();
@@ -113,7 +113,7 @@ function CreateTableFromJSON(data) {
             if (j === col.length-1){
                 let tabCell = tr.insertCell(-1);
                 let id = String(myData[i][col[0]]);
-                let aux = `<button onClick = "aparece('${id}')">Editar</button> | <button onClick = "confirmacaoExcluirAP('${id}')">Excluir</button>`;
+                let aux = `<button onclick = "aparece('${id}')">Editar</button> | <button onclick = "confirmacaoExcluirAP('${id}')">Excluir</button>`;
                 tabCell.innerHTML = aux;
             }
         }
