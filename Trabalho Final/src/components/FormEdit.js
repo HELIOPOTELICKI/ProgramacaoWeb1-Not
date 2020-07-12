@@ -7,10 +7,10 @@ function Form ({onSubmit}) {
         <Formik render={({handleSubmit, resetForm}) => {
             return (   
                 <div>
-                    <form onSubmit={ handleSubmit } id="camposNovoEmpregado" className="camposNovoEmpregado"> 
+                    <form onSubmit={ handleSubmit } id="camposEditEmpregado" className="camposEditEmpregado">
                         <p></p>
                             <h3>
-                                Adicionando novo Empregado
+                                Editando dados de 
                             </h3>
                         <p></p>
                         <p>
@@ -37,7 +37,7 @@ function Form ({onSubmit}) {
                 </div>
             )
         }}
-        initialValues={{name:'', salary:'', age:'', profile_image:''}}
+        initialValues={{name:onSubmit.name, salary:onSubmit.salary, age:onSubmit.age, profile_image:onSubmit.profile_image}}
         onSubmit={(values, {resetForm}) => {
             onSubmit(values)
             resetForm()
