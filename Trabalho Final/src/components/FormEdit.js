@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
 
-function Form ({onSubmit}) {
+function FormEdit ({onSubmit}) {
   console.log(onSubmit)
     return(
         <Formik render={({handleSubmit, resetForm}) => {
@@ -44,4 +44,4 @@ function Form ({onSubmit}) {
         }} />
     )
 }
-export default Form
+export default FormEdit
