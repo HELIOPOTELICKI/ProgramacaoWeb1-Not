@@ -1,16 +1,17 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
 
-function Form ({onSubmit}) {
-  console.log(onSubmit)
+const valoresIniciais = {name:'', salary:'', age:'', profile_image:''}
+
+function Form ({onSubmit, editing, discardEditing}) {
     return(
-        <Formik render={({handleSubmit, resetForm}) => {
+        <Formik render={({handleSubmit, resetForm, values}) => {
             return (   
                 <div>
                     <form onSubmit={ handleSubmit } id="camposNovoEmpregado" className="camposNovoEmpregado"> 
                         <p></p>
                             <h3>
-                                Adicionando novo Empregado
+                                {values.id ? 'Editando' : 'Adicionando novo'} Empregado
                             </h3>
                         <p></p>
                         <p>
@@ -31,13 +32,20 @@ function Form ({onSubmit}) {
                         </p>
                         <div id="BTNNovoEmpregado" className="BTNNovoEmpregado">
                             <button type="submit" value="Submit" className="FormBTNS">Salvar</button>
-                            <button type="reset" value="Reset" className="FormBTNS" onClick={ resetForm }>Cancelar</button>
+                            <button type="reset" value="Reset" className="FormBTNS" onClick={() => {
+                                if (values.id){
+                                    discardEditing()
+                                }else{
+                                    resetForm()
+                              } 
+                                } }>Cancelar</button>
                         </div>
                     </form>
                 </div>
             )
         }}
-        initialValues={{name:'', salary:'', age:'', profile_image:''}}
+        enableReinitialize
+        initialValues={editing || valoresIniciais}
         onSubmit={(values, {resetForm}) => {
             onSubmit(values)
             resetForm()

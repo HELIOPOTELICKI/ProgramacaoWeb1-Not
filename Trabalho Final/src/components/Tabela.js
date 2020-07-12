@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Tabela ({ contents }) {
+function Tabela ({ contents, onRemove, onEdit}) {
     return (
       <table>
         <thead>
@@ -24,8 +24,13 @@ function Tabela ({ contents }) {
                   <td>{content.employee_age}</td>
                   <td><img src={content.profile_image ? content.profile_image : defaultProfileImage} alt={''} width="50" height="50" /></td>
                   <td>
-                    <button>Editar</button>
-                    <button>Excluir</button>
+                    <button onClick={() => onEdit(content) }>Editar</button>
+                    <button onClick={() => {
+                      // eslint-disable-next-line
+                      if (confirm('Deseja realmente apagar esse otario?')){
+                        onRemove(content.id)
+                      }
+                      } }>Excluir</button>
                   </td>
                 </tr>
               )

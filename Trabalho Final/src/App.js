@@ -3,10 +3,9 @@ import './App.css';
 import axios from 'axios';
 import Tabela from './components/Tabela'
 import Form from './components/Form'
-import FormEdit from './components/FormEdit'
 
 class App extends React.Component {
-  state = { contents:[] }
+  state = { contents:[], editing:null}
 
   componentDidMount () {
     this.getData()
@@ -23,7 +22,12 @@ class App extends React.Component {
 
   inserirNovoEmp = async (values) => {
     try{
-      await axios.post('http://rest-api-employees.jmborges.site/api/v1/create', values)
+      if (values.id){
+        await axios.put('http://rest-api-employees.jmborges.site/api/v1/update/' + values.id, values)
+        this.setState({editing:null})
+      }else{
+        await axios.post('http://rest-api-employees.jmborges.site/api/v1/create', values)
+      }
     }catch(e){
       console.log(e)
       alert('Falha em inserir o novo empregado!')
@@ -31,29 +35,39 @@ class App extends React.Component {
     this.getData()
   }
 
- editEmpregado = async (values) => {
+  handleEdit = content => {
+    this.setState({editing:{
+      id:content.id,
+      name:content.employee_name,
+      salary:content.employee_salary,
+      age:content.employee_age,
+      profile_image:content.profile_image
+    }})
+  }
+
+  handleRemove = async (id) => {
     try{
-      await axios.put('http://rest-api-employees.jmborges.site/api/v1/update/' + values.id)
+      await axios.delete('http://rest-api-employees.jmborges.site/api/v1/delete/' + id)
     }catch(e){
       console.log(e)
-      alert('Falha em editar o empregado!')
+      alert('Falha em excluir o empregado!')
     }
     this.getData()
+  
+  }
+
+  cancelEditing = () => {
+    this.setState({editing:null})
   }
 
   render() {
     return(
       <div className="BodyMain">
-          <Tabela contents={this.state.contents}/>
+          <Tabela contents={this.state.contents} onRemove={this.handleRemove} onEdit={this.handleEdit}/>
           <div className="EditaAdiciona">
               <div id="NovoEmpregado" className="NovoEmpregado">  
               <div className="alinhaNovoEmpregado">
-                <Form onSubmit={this.inserirNovoEmp} />
-              </div>
-            </div>
-            <div id="NovoEmpregado" className="NovoEmpregado">  
-              <div className="alinhaNovoEmpregado">
-                <FormEdit onSubmit={this.editEmpregado} />
+                <Form onSubmit={this.inserirNovoEmp} editing={this.state.editing} discardEditing={this.cancelEditing}/>
               </div>
             </div>
           </div>
