@@ -37,8 +37,8 @@ function Form ({onSubmit, editing, discardEditing}) {
                                     discardEditing()
                                 }else{
                                     resetForm()
-                              } 
-                                } }>Cancelar</button>
+                                } 
+                            } }>Cancelar</button>
                         </div>
                     </form>
                 </div>

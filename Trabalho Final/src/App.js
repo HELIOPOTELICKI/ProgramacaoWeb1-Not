@@ -36,13 +36,15 @@ class App extends React.Component {
   }
 
   handleEdit = content => {
-    this.setState({editing:{
-      id:content.id,
-      name:content.employee_name,
-      salary:content.employee_salary,
-      age:content.employee_age,
-      profile_image:content.profile_image
-    }})
+    this.setState({
+      editing:{
+        id:content.id,
+        name:content.employee_name,
+        salary:content.employee_salary,
+        age:content.employee_age,
+        profile_image:content.profile_image
+      }
+    })
   }
 
   handleRemove = async (id) => {

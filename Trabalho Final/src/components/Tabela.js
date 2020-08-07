@@ -27,10 +27,10 @@ function Tabela ({ contents, onRemove, onEdit}) {
                     <button onClick={() => onEdit(content) }>Editar</button>
                     <button onClick={() => {
                       // eslint-disable-next-line
-                      if (confirm('Deseja realmente apagar esse otario?')){
+                      if (confirm('Deseja realmente deletar este empregado? A exclusão não poderá ser desfeita')){
                         onRemove(content.id)
                       }
-                      } }>Excluir</button>
+                    }}>Excluir</button>
                   </td>
                 </tr>
               )
